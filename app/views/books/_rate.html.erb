@@ -1,0 +1,12 @@
+<div id="rate<%= book.id %>"></div> 
+  <script>
+   let elem3 = document.querySelector("#rate<%= book.id %>");
+   let opt3 = {  
+      size     : 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      readOnly: true,
+      score: <%= book.rate %>,
+     };
+    raty(elem3,opt3);
+  </script>

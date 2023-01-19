@@ -4,6 +4,17 @@
   		<h1>Editing Book</h1>
     	<%= render 'layouts/errors', obj: @book %>
   		<%= render 'form', book: @book %>
+  <script>
+    elem = document.querySelector("#post_raty");
+    opt = {  
+      size     : 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      readOnly: true,
+      score: <%= @book.rate %>,
+     };
+    raty(elem,opt);
+  </script>
   		<%= link_to 'Show', @book, class: "book_#{@book.id}" %> |
   		<%= link_to 'Back', books_path, class: "back" %>
   </div>
