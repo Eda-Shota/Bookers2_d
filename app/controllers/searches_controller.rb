@@ -11,4 +11,10 @@ class SearchesController < ApplicationController
       render "/searches/search_lists.html"
     end
   end
+
+  def search_book
+    @book=Book.new
+    @books = Book.search(params[:category])
+    render "/searches/search_lists.html"
+  end
 end
